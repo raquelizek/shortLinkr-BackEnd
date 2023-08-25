@@ -2,7 +2,9 @@
 
 namespace App\Providers;
 
+use App\Models\Access;
 use App\Models\Link;
+use App\Repositories\AccessRepositoryEloquent;
 use App\Repositories\LinkRepositoryEloquent;
 use Illuminate\Support\ServiceProvider;
 
@@ -19,6 +21,12 @@ class AppServiceProvider extends ServiceProvider
 
         $this->app->bind('App\Repositories\LinkRepositoryInterface', function () {
             return new LinkRepositoryEloquent(new Link());
+        });
+
+        $this->app->bind('App\Repositories\AccessRepositoryInterface', 'App\Repositories\AccessRepositoryEloquent');
+
+        $this->app->bind('App\Repositories\AccessRepositoryInterface', function () {
+            return new AccessRepositoryEloquent(new Access());
         });
     }
 
