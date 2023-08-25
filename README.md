@@ -3,35 +3,35 @@
 ## 💻 Project
 A small challenge to develop an application to shorten links.
 
-## Project setup
+## 📌 Project setup
 In this project you will need to use the MySQL database. </br>
 I recommend using docker because it would simplify the process a lot.</br></br>
 
-📌 Download the repository
+● <b> Download the repository </b>
 ```
 git clone https://github.com/raquelizek/shortLinkr-BackEnd.git
 ```
 
-📌 Install composer
+● <b>Install composer</b>
 ```
 composer install
 ```
 
-📌 Configure your .env file 
+● <b>Configure your .env file 
 
 </br>
 
-📌 Run this command to generate a key
+● <b>Run this command to generate a key</b>
 ```
 php artisan key:generate
 ```
 
-📌 Run the migrations
+● <b>Run the migrations</b>
 ```
 php artisan migrate
 ```
 
-📌 Start the project
+● <b>Start the project</b>
 ```
 php artisan server
 ```
