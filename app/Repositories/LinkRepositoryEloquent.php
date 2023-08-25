@@ -21,6 +21,11 @@ class LinkRepositoryEloquent implements LinkRepositoryInterface
 
     }
 
+    public function getIdentifier($identifier)
+    {
+        return $this->model->where('identifier', $identifier)->first();
+    }
+
     public function getList()
     {
         return $this->model->all();
@@ -31,7 +36,12 @@ class LinkRepositoryEloquent implements LinkRepositoryInterface
         return $this->model->where('link', $link)->first();
     }
 
-    public function get($id)
+    public function get($identifier)
+    {
+        return $this->model->where('identifier', $identifier)->first();
+    }
+
+    public function getById($id)
     {
         return $this->model->find($id);
     }
