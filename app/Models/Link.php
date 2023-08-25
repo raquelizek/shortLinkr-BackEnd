@@ -10,8 +10,9 @@ class Link extends Model
     use HasFactory;
 
     protected $fillable = [
+        'id',
         'link',
+        'identifier',
         'encurted_link',
-        'slug',
     ];
 }
