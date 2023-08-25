@@ -31,7 +31,7 @@ php artisan key:generate
 php artisan migrate
 ```
 
-📌 Start project
+📌 Start the project
 ```
 php artisan server
 ```
