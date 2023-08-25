@@ -19,8 +19,8 @@ class LinkController extends Controller
         try {
             return $this->service->store([
                 'link' => $request->input('link'),
+                'identifier' => $request->input('identifier'),
                 'encurted_link' => $request->input('encurted_link'),
-                'slug' => $request->input('slug'),
             ]);
         } catch (\Exception $exception) {
             return response()->json(
@@ -33,7 +33,7 @@ class LinkController extends Controller
 
     }
 
-    public function getList()
+    public function all()
     {
         try {
             return $this->service->getList();
@@ -48,10 +48,24 @@ class LinkController extends Controller
         }
     }
 
-    public function get($id)
+    public function get(Request $request)
     {
         try {
-            return $this->service->get($id);
+            return $this->service->get($request->identifier);
+        } catch (\Exception $exception) {
+            return response()->json(
+                [
+                    "type" => "error",
+                    "message" => $exception->getMessage(),
+                ],
+            );
+        }
+    }
+
+    public function getById(Request $request)
+    {
+        try {
+            return $this->service->getById($request->id);
         } catch (\Exception $exception) {
             return response()->json(
                 [
